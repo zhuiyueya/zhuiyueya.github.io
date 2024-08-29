@@ -69,6 +69,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-C-的mysql接口注意事项" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/08/29/C-%E7%9A%84mysql%E6%8E%A5%E5%8F%A3%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" class="article-date">
+  <time class="dt-published" datetime="2024-08-29T14:10:36.000Z" itemprop="datePublished">2024-08-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/08/29/C-%E7%9A%84mysql%E6%8E%A5%E5%8F%A3%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">C++的mysql接口注意事项</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>##多进程：</p>
+<p>1.在父进程中初始化并连接的MYSQL，若在子进程也需要使用其命令，则需要在子进程中再次初始化并连接到mysql服务器<br>原因：虽然子进程获得了连接的副本，但每个 MySQL 连接都是独立的，子进程中的连接副本实际上是无效的，它不再与 MySQL 服务器保持活动的通信。</p>
+<hr>
+<p>##接口的使用：</p>
+<p>1.在执行一次mysql_query后，若未处理结果，如调用 mysql_store_result() 或 mysql_use_result()，就再次调用mysql_query,那么第二次调用将发生错误</p>
+<hr>
+<p>##etc.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/08/29/C-%E7%9A%84mysql%E6%8E%A5%E5%8F%A3%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" data-id="cm0fdktob0000kkr40rhqetj6" data-title="C++的mysql接口注意事项" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-我的第一篇文章" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/08/13/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" class="article-date">
@@ -195,6 +240,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2024/08/29/C-%E7%9A%84mysql%E6%8E%A5%E5%8F%A3%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">C++的mysql接口注意事项</a>
+          </li>
         
           <li>
             <a href="/2024/08/13/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/">我的第一篇文章</a>
