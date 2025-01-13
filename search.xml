@@ -3,14 +3,11 @@
   <entry>
     <title>C++的mysql接口注意事项</title>
     <url>/2024/08/29/C-%E7%9A%84mysql%E6%8E%A5%E5%8F%A3%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</url>
-    <content><![CDATA[<p>##多进程：</p>
-<p>1.在父进程中初始化并连接的MYSQL，若在子进程也需要使用其命令，则需要在子进程中再次初始化并连接到mysql服务器<br>原因：虽然子进程获得了连接的副本，但每个 MySQL 连接都是独立的，子进程中的连接副本实际上是无效的，它不再与 MySQL 服务器保持活动的通信。</p>
+    <content><![CDATA[<h2 id="多进程："><a href="#多进程：" class="headerlink" title="多进程："></a>多进程：</h2><p>1.在父进程中初始化并连接的MYSQL，若在子进程也需要使用其命令，则需要在子进程中再次初始化并连接到mysql服务器<br>原因：虽然子进程获得了连接的副本，但每个 MySQL 连接都是独立的，子进程中的连接副本实际上是无效的，它不再与 MySQL 服务器保持活动的通信。</p>
 <hr>
-<p>##接口的使用：</p>
-<p>1.在执行一次mysql_query后，若未处理结果，如调用 mysql_store_result() 或 mysql_use_result()，就再次调用mysql_query,那么第二次调用将发生错误</p>
+<h2 id="接口的使用："><a href="#接口的使用：" class="headerlink" title="接口的使用："></a>接口的使用：</h2><p>1.在执行一次mysql_query后，若未处理结果，如调用 mysql_store_result() 或 mysql_use_result()，就再次调用mysql_query,那么第二次调用将发生错误</p>
 <hr>
-<p>##etc.</p>
-]]></content>
+<h2 id="etc"><a href="#etc" class="headerlink" title="etc."></a>etc.</h2>]]></content>
   </entry>
   <entry>
     <title>Hello World</title>
@@ -33,19 +30,32 @@
   <entry>
     <title>我的第一篇文章</title>
     <url>/2024/08/13/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p>##第一章</p>
-<p>内容</p>
+    <content><![CDATA[<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>内容</p>
 <hr>
-<p>##第二章</p>
-<p>内容</p>
+<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容</p>
 <hr>
-<p>##参考文献</p>
-<p><a href="http://www.codesheep.cn/">www.codesheep.cn</a></p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="http://www.codesheep.cn/">www.codesheep.cn</a></p>
 ]]></content>
   </entry>
   <entry>
     <title>欢迎来到追月呀的博客</title>
     <url>/2024/09/19/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E8%BF%BD%E6%9C%88%E5%91%80%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>虚拟机VMware的ubuntu系统与主机无法互ping解法方法（桥接模式法）</title>
+    <url>/2025/01/13/%E8%99%9A%E6%8B%9F%E6%9C%BAVMware%E7%9A%84ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8E%E4%B8%BB%E6%9C%BA%E6%97%A0%E6%B3%95%E4%BA%92ping%E8%A7%A3%E6%B3%95%E6%96%B9%E6%B3%95%EF%BC%88%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F%E6%B3%95%EF%BC%89/</url>
+    <content><![CDATA[<h2 id="虚拟机的设置"><a href="#虚拟机的设置" class="headerlink" title="虚拟机的设置"></a>虚拟机的设置</h2><p>虚拟机界面–&gt;编辑–&gt;虚拟网络编辑器–&gt;更改设置–&gt;WMnet0</p>
+<p>将下方WMnet0信息选择为桥接模式，已桥接至选择为主机的无线网卡型号</p>
+<h4 id="如何查找主机的无线网卡型号？（以windows11为例）"><a href="#如何查找主机的无线网卡型号？（以windows11为例）" class="headerlink" title="如何查找主机的无线网卡型号？（以windows11为例）"></a>如何查找主机的无线网卡型号？（以windows11为例）</h4><p>win+R–&gt;输入cmd打开命令行工具–&gt;输入ipconfig &#x2F;all–&gt;找到（无线局域网适配器 WLAN）里的（描述），那一串就是无线网卡型号</p>
+<h2 id="ubuntu设置"><a href="#ubuntu设置" class="headerlink" title="ubuntu设置"></a>ubuntu设置</h2><p>1.网络适配器设置为桥接模式</p>
+<p>2.打开有线设置</p>
+<p><img src="/2024/08/29/C-%E7%9A%84mysql%E6%8E%A5%E5%8F%A3%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/u%E7%B3%BB%E7%BB%9F%E4%B8%8E%E4%B8%BB%E6%9C%BA%E6%97%A0%E6%B3%95%E4%BA%92ping%E8%A7%A3%E6%B3%95%E6%96%B9%E6%B3%95%EF%BC%88%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F%E6%B3%95%EF%BC%89/1.png" alt="图片"></p>
+<p>3.添加新的配置</p>
+<p><img src="/2024/08/29/C-%E7%9A%84mysql%E6%8E%A5%E5%8F%A3%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/u%E7%B3%BB%E7%BB%9F%E4%B8%8E%E4%B8%BB%E6%9C%BA%E6%97%A0%E6%B3%95%E4%BA%92ping%E8%A7%A3%E6%B3%95%E6%96%B9%E6%B3%95%EF%BC%88%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F%E6%B3%95%EF%BC%89/2.png" alt="图片"></p>
+<p>其中子网掩码、网关、DNS和主机保持一致，而IP地址前三位和主机保持一致，最后一位设置为不一样的（可能与网络里其他已经存在的IP冲突了，多试几个），其他信息都不用管<br><img src="/2024/08/29/C-%E7%9A%84mysql%E6%8E%A5%E5%8F%A3%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/u%E7%B3%BB%E7%BB%9F%E4%B8%8E%E4%B8%BB%E6%9C%BA%E6%97%A0%E6%B3%95%E4%BA%92ping%E8%A7%A3%E6%B3%95%E6%96%B9%E6%B3%95%EF%BC%88%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F%E6%B3%95%EF%BC%89/3.png" alt="图片"><br><img src="/2024/08/29/C-%E7%9A%84mysql%E6%8E%A5%E5%8F%A3%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/u%E7%B3%BB%E7%BB%9F%E4%B8%8E%E4%B8%BB%E6%9C%BA%E6%97%A0%E6%B3%95%E4%BA%92ping%E8%A7%A3%E6%B3%95%E6%96%B9%E6%B3%95%EF%BC%88%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F%E6%B3%95%EF%BC%89/4.png" alt="图片"></p>
+<h4 id="如何查找主机子网掩码、网关、DNS、IP地址？（以windows11为例）"><a href="#如何查找主机子网掩码、网关、DNS、IP地址？（以windows11为例）" class="headerlink" title="如何查找主机子网掩码、网关、DNS、IP地址？（以windows11为例）"></a>如何查找主机子网掩码、网关、DNS、IP地址？（以windows11为例）</h4><p>win+R–&gt;输入cmd打开命令行工具–&gt;输入ipconfig &#x2F;all–&gt;找到（无线局域网适配器 WLAN）里对应的项</p>
+<p>4.将有线配置切换为新添加的</p>
+<h4 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h4>]]></content>
   </entry>
 </search>
